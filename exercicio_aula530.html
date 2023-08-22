@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curso HTML, JS e Css</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Curso HTML, JS e Css</h1>
+        <br>
+        <h3>Anos Bissextos: </h3>
+        <br>
+
+        <script>
+            var ano = 1000;
+            while(ano<=2023){
+                if(( (ano%4)==0 || (ano%400)==0 ) && !((ano%100)==0)){
+                    document.write(ano + "<br>");
+                }
+
+                ano++;
+            }
+        </script>
+
+    </body>
+</html>

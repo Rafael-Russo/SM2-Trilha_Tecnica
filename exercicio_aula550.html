@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Curso HTML, JS e Css</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Curso HTML, JS e Css</h1>
+
+    <div id="output"></div>
+
+    <script>
+        run();
+        function run() {
+            var output = document.querySelector('#output');
+            var nums = new Array(parseInt(Math.random() * 100), parseInt(Math.random() * 100), parseInt(Math.random() * 100), parseInt(Math.random() * 100), parseInt(Math.random() * 100), parseInt(Math.random() * 100), parseInt(Math.random() * 100), parseInt(Math.random() * 100), parseInt(Math.random() * 100), parseInt(Math.random() * 100));
+            var HTML = `<br><button onclick=run()>AGAIN?</button><br>`;
+            var soma = 0;
+
+            nums.forEach(element => {
+                HTML += `<label>${element}</label><br>`;
+                if((element%2)==0){
+                    soma+=element;
+                }
+            });
+
+            HTML += `<br><h3>A soma dos números pares é: ${soma}</h3>`
+
+            output.innerHTML = HTML;
+        }
+    </script>
+
+</body>
+
+</html>

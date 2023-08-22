@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Curso HTML, JS e Css</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Curso HTML, JS e Css</h1>
+
+    <div id="output"></div>
+
+    <script>
+        var output = document.querySelector('#output');
+        var HTML;
+
+        reload();
+
+        function reload() {
+            HTML = `<h4>${calc()}</h4><br><button onclick="reload()">AGAIN?</button>`;
+            output.innerHTML = HTML;
+        }
+
+        function calc() {
+            var num1 = parseFloat(prompt("Digite o primeiro lado do retângulo: "));
+            var num2 = parseFloat(prompt("Digite o segundo lado do retângulo: "));
+            try {
+                if (isNaN(num1) || isNaN(num2)) {
+                    throw new Error('Formato de número inválido!');
+                }
+                var area = num1 * num2;
+            } catch (error) {
+                console.log(error);
+                alert("algo deu errado!");
+                return 0;
+            }
+            return area;
+        }
+    </script>
+
+</body>
+
+</html>

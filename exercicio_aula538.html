@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Curso HTML, JS e Css</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Curso HTML, JS e Css</h1>
+
+    <div id="output"></div>
+
+    <script>
+        var output = document.querySelector('#output');
+        var mainNum;
+        var secNum;
+        mainNum = parseInt(prompt("Digite um número"));
+        reload(mainNum);
+
+        function reload(num1) {
+            mainNum = num1;
+            var HTML = `
+                            <button onclick="calc('+')">+</button>
+                            <button onclick="calc('-')">-</button>
+                            <button onclick="calc('/')">/</button>
+                            <button onclick="calc('*')">*</button>
+                            <br><h4>${mainNum}</h4>
+                        `;
+            output.innerHTML = HTML;
+        }
+
+        function calc(sinal) {
+            secNum = parseInt(prompt("Digite um Número"));
+            switch (sinal) {
+                case '+':
+                    mainNum += secNum;
+                    break;
+                case '-':
+                    mainNum -= secNum;
+                    break;
+                case '/':
+                    mainNum /= secNum;
+                    break;
+                case '*':
+                    mainNum *= secNum;
+                    break;
+            }
+            reload(mainNum);
+        }
+    </script>
+
+</body>
+
+</html>

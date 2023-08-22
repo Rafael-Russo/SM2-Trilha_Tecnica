@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Curso HTML, JS e Css</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Curso HTML, JS e Css</h1>
+
+    <div id="output"></div>
+
+    <script>
+        var output = document.querySelector('#output');
+        var HTML = "";
+        var contas = [ {'nome': 'Rafael', 'email': 'rafael@gmail.com'},
+                        {'nome': 'Gabriel', 'email': 'gabriel@gmail.com'}, 
+                        {'nome': 'Samuel', 'email': 'samuel@gmail.com'}
+                    ]
+                    //contas.add({'nome': 'Paula', 'email': 'paula@gmail.com'});
+        contas.forEach(element => {
+            HTML += `<h4>Nome: ${element.nome}</h4>
+                    <h4>Email: ${element.email}</h4>`
+        });
+        output.innerHTML = HTML;
+
+    </script>
+
+</body>
+
+</html>

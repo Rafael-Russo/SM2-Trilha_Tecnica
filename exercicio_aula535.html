@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curso HTML, JS e Css</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Curso HTML, JS e Css</h1>
+
+        <div id="output"></div>
+
+        <script>
+            var output = document.querySelector('#output');
+            var mainNum;
+            var secNum;
+            mainNum = parseInt(prompt("Digite um número"));
+            reload(mainNum);
+
+            function reload(num1){
+                mainNum = num1;
+                var HTML = `
+                            <button onclick="soma()">+</button>
+                            <button onclick="sub()">-</button>
+                            <button onclick="divi()">/</button>
+                            <button onclick="mult()">*</button>
+                            <br><h4>${mainNum}</h4>
+                        `;
+                output.innerHTML = HTML;
+            }
+
+            function soma() {
+                secNum = parseInt(prompt("Digite um número"));
+                mainNum += secNum;
+                reload(mainNum);
+            }
+            function sub() {
+                secNum = parseInt(prompt("Digite um número"));
+                mainNum -= secNum;
+                reload(mainNum);
+            }
+            function divi() {
+                secNum = parseInt(prompt("Digite um número"));
+                mainNum /= secNum;
+                reload(mainNum);
+            }
+            function mult() {
+                secNum = parseInt(prompt("Digite um número"));
+                mainNum *= secNum;
+                reload(mainNum);
+            }
+        </script>
+
+    </body>
+</html>

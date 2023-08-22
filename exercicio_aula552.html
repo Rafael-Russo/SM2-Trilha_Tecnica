@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Curso HTML, JS e Css</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Curso HTML, JS e Css</h1>
+
+    <div id="output"></div>
+
+    <script>
+        var output = document.querySelector('#output');
+        var caneta = new Object();
+        caneta.nome = "Caneta";
+        caneta.preco = 2.99;
+        caneta.qnt = 18;
+
+        reload();
+
+        function reload() {
+            var HTML = `<h3>Nome: ${caneta.nome}</h3>
+                    <h4>Preço: ${caneta.preco}</h4>
+                    <h4>Qnt: ${caneta.qnt}</h4>
+                    <button onclick=comprar()>Comprar</button>
+                    `;
+            output.innerHTML = HTML;
+        }
+
+
+        
+        
+        function comprar(){
+            if(caneta.qnt>0){
+                caneta.qnt--;
+            }else{
+                alert("acabou o estoque de caneta");
+            }
+            reload();
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Curso HTML, JS e Css</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Curso HTML, JS e Css</h1>
+
+    <div id="output"></div>
+
+    <script>
+        (function media() {
+            if (media.arguments.length == 0) {
+                var num = parseInt(prompt("Digite os Numeros\n(digite uma letra para receber a média)"));
+                var params = new Array();
+                do {
+                    params.push(num);
+                    num = parseInt(prompt("Digite os Numeros\n(digite uma letra para receber a média)"));
+                } while (!isNaN(num));
+                media(...params);
+            } else {
+                var soma = 0;
+                var x = 0;
+                while (arguments[x]) {
+                    soma += arguments[x];
+                    x++;
+                }
+                alert("A média é: " + (soma / x));
+            }
+        })();
+    </script>
+
+</body>
+
+</html>
