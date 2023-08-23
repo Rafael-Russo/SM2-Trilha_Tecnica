@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Curso Javascript Completo 2018</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Curso Javascript Completo 2018</h1>
+
+    </div>
+
+    <script>
+        (function() {
+            var nome = "Rafael Russo Soares";
+            var posUltimoEspaco = nome.lastIndexOf(' ');
+            var ultimoNome;
+            var primeiroNome;
+            if (posUltimoEspaco >= 0) {
+                ultimoNome = nome.slice(posUltimoEspaco);
+                primeiroNome = nome.slice(0, posUltimoEspaco);
+
+                console.log(ultimoNome + ', ' + primeiroNome);
+            }
+        })()
+    </script>
+
+</body>
+
+</html>

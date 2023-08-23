@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Curso Javascript Completo 2018</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Curso Javascript Completo 2018</h1>
+    </div>
+
+    <script>
+        (function() {
+            var arr = new Array();
+            var qntNums = 1000;
+            var max = 999999;
+            var min = -999999;
+            var soma = 0;
+            var media;
+
+            for (var i = 0; i < qntNums; i++) {
+                arr[i] = Math.floor(Math.random() * (max - min) + min);
+                soma += arr[i];
+            }
+
+            media = soma / qntNums;
+
+            if (media.toString().indexOf('-') < 0) {
+                console.log(media.toPrecision(media.toString().indexOf('.') + 2));
+            } else {
+                console.log(media.toPrecision(media.toString().indexOf('.') + 1));
+            }
+        })()
+    </script>
+
+</body>
+
+</html>
