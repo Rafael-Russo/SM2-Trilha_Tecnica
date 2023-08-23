@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Curso HTML, JS e Css</title>
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Curso HTML, JS e Css</h1>
+    </div>
+    <div class="container">
+        <textarea id="msg"></textarea>
+        <label for="msg" id="lblLimit"></label>
+    </div>
+
+    <script>
+        (function() {
+            var $txtMsg = document.getElementById('msg');
+            var $lblLimit = document.getElementById('lblLimit');
+            var max = 100;
+
+            $txtMsg.maxLength = max;
+            $lblLimit.textContent = max;
+
+            $txtMsg.addEventListener('input', function() {
+                var nChars = this.value.length;
+                countChars = parseInt(max) - parseInt(nChars);
+                $lblLimit.textContent = countChars;
+                lastInput = this.value;
+            })
+        })()
+    </script>
+
+</body>
+
+</html>

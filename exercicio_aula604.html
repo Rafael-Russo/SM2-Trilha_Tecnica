@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Curso HTML, JS e Css</title>
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Curso HTML, JS e Css</h1>
+    </div>
+    <div class="container">
+        <form action="#">
+            <label>Usuário: </label><br>
+            <input type="text" id="txtUser" name="user"><br>
+            <label>Senha: </label><br>
+            <input type="password" id="txtPassword" name="password"><br>
+            <button type="submit" id="btnLogar">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        (function() {
+            var $form = document.querySelector('form');
+            var $user = document.getElementById('txtUser');
+            var $senha = document.getElementById('txtPassword');
+            var $btnLogar = document.getElementById('#btnLogar');
+
+            var bd = new Array();
+
+            bd.push({
+                'user': 'Rafael',
+                'senha': '123'
+            }, {
+                'user': 'Gabriel',
+                'senha': '321'
+            })
+
+            $form.addEventListener('submit', function(evt) {
+                var element = bd.find(element => element.user == $user.value);
+                if ($user.value == "" || $user.value == null || $user.value == undefined || $senha.value == "" || $senha.value == null || $senha.value == undefined) {
+                    alert("Preencha todos os campos!");
+                    evt.preventDefault();
+                } else if (element.senha == $senha.value && (element != null || element !== undefined)) {
+                    alert("logado com sucesso!");
+                } else {
+                    alert("usuário ou senha incorretos!");
+                    evt.preventDefault();
+                }
+            })
+        })()
+    </script>
+
+</body>
+
+</html>
