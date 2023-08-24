@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Curso Javascript Completo 2018</title>
+    <meta charset="utf-8">
+
+    <style>
+        .banner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 0 1000px rgba(0, 0, 0, .8);
+            display: none;
+        }
+        
+        .banner__close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Curso Javascript Completo 2018</h1>
+    </div>
+    <div class="banner">
+        <h2>Banner Irritante</h2>
+        <button class="banner__close">X</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi provident. Excepturi, odit, velit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi provident. Excepturi, odit, velit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi provident. Excepturi, odit, velit.</p>
+    </div>
+
+    <script>
+        (function() {
+            var $banner = document.querySelector('.banner');
+            var $btnClose = document.querySelector('.banner__close');
+
+            $btnClose.addEventListener('click', fechaBanner)
+
+            function fechaBanner() {
+                $btnClose.removeEventListener('click', fechaBanner);
+                $banner.parentNode.removeChild($banner);
+            }
+
+            function abreBanner() {
+                $banner.style.display = 'block';
+                setTimeout(function() {
+                    fechaBanner();
+                }, 5000)
+            }
+
+            setTimeout(function() {
+                abreBanner();
+            }, 5000);
+        })()
+    </script>
+
+</body>
+
+</html>

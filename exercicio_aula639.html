@@ -24,11 +24,18 @@
             var $txt = document.getElementById('paragrafo');
             var txt = $txt.textContent;
             var txtNormalizado = "";
+            var palavras = txt.split(' ');
 
-            if (txt.lastIndexOf('.') > 200) {
-                for (var i = 0; i < 200; i++) {
-                    txtNormalizado += txt[i];
+            while (palavras.indexOf("") >= 0 || palavras.indexOf("\n") >= 0) {
+                if (palavras.indexOf("") >= 0) {
+                    palavras.splice(palavras.indexOf(""), 1);
+                } else if (palavras.indexOf("\n") >= 0) {
+                    palavras.splice(palavras.indexOf("\n"), 1);
                 }
+            }
+
+            if (palavras.length > 10) {
+                txtNormalizado = palavras.slice(0, 10).join(' ');
                 txtNormalizado += "...";
             }
 

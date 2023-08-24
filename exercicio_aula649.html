@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Curso Javascript Completo 2018</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Curso Javascript Completo 2018</h1>
+    </div>
+    <div id="ui">
+        <input type="number" id="tempo" name="tempo">
+        <br>
+        <input type="button" id="iniciar" value="Iniciar">
+        <input type="button" id="pausar" value="Pausar">
+        <input type="button" id="reset" value="Resetar">
+    </div>
+    <div>
+        <h1 id="cron"></h1>
+    </div>
+
+    <script>
+        (function() {
+            var $tempo = document.getElementById('tempo');
+            var $btnIniciar = document.getElementById('iniciar');
+            var $btnPausar = document.getElementById('pausar');
+            var $btnResetar = document.getElementById('reset');
+            var $cronometro = document.getElementById('cron');
+
+            var idInterval = null;
+            var tsInicial = 0;
+            var tsPausar = 0;
+            var tsDecorrido = 0;
+            var running = false;
+
+            $btnIniciar.addEventListener('click', comecarCron);
+            $btnPausar.addEventListener('click', pausarCron);
+            $btnResetar.addEventListener('click', reset);
+
+            function comecarCron() {
+                if (running) return;
+                reset();
+                tsInicial = Date.now();
+                running = true;
+                cron();
+            }
+
+            function pausarCron() {
+                if ($cronometro.textContent == "") return;
+                if (running) {
+                    clearInterval(idInterval);
+                    tsPausar = Date.now();
+                    tsDecorrido += (tsPausar - tsInicial);
+                } else {
+                    tsInicial = Date.now();
+                    cron(tsDecorrido)
+                }
+                running = !running;
+            }
+
+            function reset() {
+                tsPausar = 0;
+                tsInicial = 0;
+                tsDecorrido = 0;
+                running = false;
+                clearInterval(idInterval);
+                $cronometro.textContent = "";
+            }
+
+            function formataTs(ts) {
+
+                const MINUTO = 60 * 1000;
+                const SEGUNDO = 1000;
+
+                if (ts < SEGUNDO) {
+                    return ts;
+                } else if (ts < MINUTO) {
+                    var s = parseInt(ts / SEGUNDO);
+                    var c = ts - (s * SEGUNDO);
+
+                    return (s + ':' + c);
+                } else {
+                    var m = parseInt(ts / MINUTO);
+                    //var s = parseInt(ts / SEGUNDO - (m * 60));
+                    //var c = ts - (s * 1000) - (m * MINUTO);
+
+                    return (m + ':' + formataTs(ts - (m * MINUTO)));
+                }
+            }
+
+            function cron(tempoDecorrido) {
+                var _ts = tempoDecorrido || 0;
+
+                idInterval = setInterval(function() {
+                    var tsAgora = Date.now();
+                    var diferenca = tsAgora - tsInicial;
+
+                    $cronometro.textContent = formataTs(diferenca + _ts);
+                }, 100);
+            }
+        })()
+    </script>
+
+</body>
+
+</html>

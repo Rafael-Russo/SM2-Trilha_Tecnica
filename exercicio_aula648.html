@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Curso Javascript Completo 2018</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Curso Javascript Completo 2018</h1>
+    </div>
+    <div id="relogio">
+
+    </div>
+
+    <script>
+        (function() {
+            var $relogio = document.getElementById('relogio');
+
+            function mostraHora() {
+                var tempo = new Date();
+                if ($relogio.hasChildNodes) {
+                    $relogio.removeChild($relogio.firstChild);
+                }
+                var $hora = document.createElement('h2');
+
+                $hora.textContent = (tempo.getHours() + ":" + tempo.getMinutes() + ":" + tempo.getSeconds());
+                $relogio.appendChild($hora);
+            }
+
+            setInterval(mostraHora, 1000);
+        })()
+    </script>
+
+</body>
+
+</html>
