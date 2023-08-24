@@ -8,9 +8,10 @@
         .then(data => {
             data.forEach(item => {
                 if (item.type === "file") {
+                    console.log(item);
                     const listItem = document.createElement("li");
                     const link = document.createElement("a");
-                    link.href = item.html_url;
+                    link.href = (document.domain + '/' + item.name);
                     link.textContent = item.name;
                     listItem.appendChild(link);
 
