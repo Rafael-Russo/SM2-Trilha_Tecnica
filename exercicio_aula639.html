@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Curso Javascript Completo 2018</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Curso Javascript Completo 2018</h1>
+    </div>
+    <div class="container" id="div">
+        <p id="paragrafo">
+            Cras fermentum porttitor nisi nec dapibus. Nullam metus sapien, vehicula non augue non, blandit suscipit lacus. Quisque ipsum ipsum, maximus sed magna non, ullamcorper tincidunt magna. Vivamus vestibulum, est quis fermentum ultricies, libero turpis fermentum
+            tellus, vitae tincidunt velit magna eget lectus. Vivamus et pellentesque erat. Integer in imperdiet est, sit amet pretium nisi. Suspendisse eu volutpat eros, ac pretium purus. Duis non quam finibus, sollicitudin mi ac, feugiat justo. Pellentesque
+            viverra ante quis lectus tincidunt mattis. Sed et lorem commodo, placerat ligula vel, elementum tellus. Duis pellentesque interdum nunc at facilisis. Nulla neque elit, ultrices at bibendum id, pretium a elit. Duis sit amet leo vel sapien vestibulum
+            pellentesque vitae eget sapien. Donec dolor lectus, tristique in lorem ac, porttitor iaculis lacus. Praesent congue odio gravida eleifend suscipit. Duis placerat magna vitae justo feugiat, eget aliquet est faucibus.
+        </p>
+    </div>
+
+    <script>
+        (function() {
+            var $txt = document.getElementById('paragrafo');
+            var txt = $txt.textContent;
+            var txtNormalizado = "";
+
+            if (txt.lastIndexOf('.') > 200) {
+                for (var i = 0; i < 200; i++) {
+                    txtNormalizado += txt[i];
+                }
+                txtNormalizado += "...";
+            }
+
+            var $txtNormalizado = document.createElement('p');
+            $txtNormalizado.textContent = txtNormalizado;
+            document.getElementById('div').appendChild($txtNormalizado);
+
+        })()
+    </script>
+
+</body>
+
+</html>

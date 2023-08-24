@@ -14,8 +14,21 @@
     <script>
         (function() {
             var notas = new Array();
-            for (var i = 0; i < (100 * 10); i++) {
+            for (var i = 0; i < (5); i++) {
                 notas[i] = Math.floor(Math.random() * 100);
+            }
+
+            if (notas.indexOf(0) <= 0) {
+                var soma = notas.reduce((ant, atual) => ant + atual);
+                var media = soma / notas.length;
+                if (media >= 60) {
+                    alert('Aluno Aprovado!');
+                } else {
+                    alert('Aluno abaixo da média')
+                }
+                console.log(media);
+            } else {
+                alert('aluno reprovado!');
             }
         })()
     </script>
