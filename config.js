@@ -10,7 +10,7 @@
                 if (item.type === "file") {
                     const listItem = document.createElement("li");
                     const link = document.createElement("a");
-                    link.href = (item.name);
+                    link.href = ('../' + item.name);
                     link.textContent = item.name;
                     listItem.appendChild(link);
 
