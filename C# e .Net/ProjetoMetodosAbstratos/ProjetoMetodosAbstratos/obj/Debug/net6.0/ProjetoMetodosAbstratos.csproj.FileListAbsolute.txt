@@ -1,0 +1,14 @@
+C:\Users\rafae\Documents\Trilha-Tecnica\SM2-Trilha_Tecnica\C# e .Net\ProjetoMetodosAbstratos\ProjetoMetodosAbstratos\obj\Debug\net6.0\ProjetoMetodosAbstratos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rafae\Documents\Trilha-Tecnica\SM2-Trilha_Tecnica\C# e .Net\ProjetoMetodosAbstratos\ProjetoMetodosAbstratos\obj\Debug\net6.0\ProjetoMetodosAbstratos.AssemblyInfoInputs.cache
+C:\Users\rafae\Documents\Trilha-Tecnica\SM2-Trilha_Tecnica\C# e .Net\ProjetoMetodosAbstratos\ProjetoMetodosAbstratos\obj\Debug\net6.0\ProjetoMetodosAbstratos.AssemblyInfo.cs
+C:\Users\rafae\Documents\Trilha-Tecnica\SM2-Trilha_Tecnica\C# e .Net\ProjetoMetodosAbstratos\ProjetoMetodosAbstratos\obj\Debug\net6.0\ProjetoMetodosAbstratos.csproj.CoreCompileInputs.cache
+C:\Users\rafae\Documents\Trilha-Tecnica\SM2-Trilha_Tecnica\C# e .Net\ProjetoMetodosAbstratos\ProjetoMetodosAbstratos\bin\Debug\net6.0\ProjetoMetodosAbstratos.exe
+C:\Users\rafae\Documents\Trilha-Tecnica\SM2-Trilha_Tecnica\C# e .Net\ProjetoMetodosAbstratos\ProjetoMetodosAbstratos\bin\Debug\net6.0\ProjetoMetodosAbstratos.deps.json
+C:\Users\rafae\Documents\Trilha-Tecnica\SM2-Trilha_Tecnica\C# e .Net\ProjetoMetodosAbstratos\ProjetoMetodosAbstratos\bin\Debug\net6.0\ProjetoMetodosAbstratos.runtimeconfig.json
+C:\Users\rafae\Documents\Trilha-Tecnica\SM2-Trilha_Tecnica\C# e .Net\ProjetoMetodosAbstratos\ProjetoMetodosAbstratos\bin\Debug\net6.0\ProjetoMetodosAbstratos.dll
+C:\Users\rafae\Documents\Trilha-Tecnica\SM2-Trilha_Tecnica\C# e .Net\ProjetoMetodosAbstratos\ProjetoMetodosAbstratos\bin\Debug\net6.0\ProjetoMetodosAbstratos.pdb
+C:\Users\rafae\Documents\Trilha-Tecnica\SM2-Trilha_Tecnica\C# e .Net\ProjetoMetodosAbstratos\ProjetoMetodosAbstratos\obj\Debug\net6.0\ProjetoMetodosAbstratos.dll
+C:\Users\rafae\Documents\Trilha-Tecnica\SM2-Trilha_Tecnica\C# e .Net\ProjetoMetodosAbstratos\ProjetoMetodosAbstratos\obj\Debug\net6.0\refint\ProjetoMetodosAbstratos.dll
+C:\Users\rafae\Documents\Trilha-Tecnica\SM2-Trilha_Tecnica\C# e .Net\ProjetoMetodosAbstratos\ProjetoMetodosAbstratos\obj\Debug\net6.0\ProjetoMetodosAbstratos.pdb
+C:\Users\rafae\Documents\Trilha-Tecnica\SM2-Trilha_Tecnica\C# e .Net\ProjetoMetodosAbstratos\ProjetoMetodosAbstratos\obj\Debug\net6.0\ProjetoMetodosAbstratos.genruntimeconfig.cache
+C:\Users\rafae\Documents\Trilha-Tecnica\SM2-Trilha_Tecnica\C# e .Net\ProjetoMetodosAbstratos\ProjetoMetodosAbstratos\obj\Debug\net6.0\ref\ProjetoMetodosAbstratos.dll
