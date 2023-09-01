@@ -1,4 +1,5 @@
 ﻿using ProjetoXadrez.camTab.Enums;
+using ProjetoXadrez.camXad;
 
 namespace ProjetoXadrez.camTab {
     abstract class Peca {
@@ -6,16 +7,22 @@ namespace ProjetoXadrez.camTab {
         public Cor cor { get; protected set; }
         public int qtdMovimento { get; protected set; }
         public Tabuleiro tab { get; protected set; }
+        public prtdXadrez partida { get; protected set; }
 
-        public Peca(Tabuleiro tab, Cor cor) {
+        public Peca(Tabuleiro tab, Cor cor, prtdXadrez partida) {
             this.posicao = null;
             this.tab = tab;
             this.cor = cor;
+            this.partida = partida;
             this.qtdMovimento = 0;
         }
 
         public void incrementaMovimento() {
             qtdMovimento++;
+        }
+
+        public void decrementaMovimento() {
+            qtdMovimento--;
         }
 
         public bool existeMovPossiveis() {

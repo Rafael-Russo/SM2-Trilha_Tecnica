@@ -3,7 +3,7 @@ using ProjetoXadrez.camTab.Enums;
 
 namespace ProjetoXadrez.camXad {
     class Rainha : Peca {
-        public Rainha(Tabuleiro tab, Cor cor) : base(tab, cor) {
+        public Rainha(Tabuleiro tab, Cor cor, prtdXadrez partida) : base(tab, cor, partida) {
         }
 
         private bool podeMover(Posicao pos) {
@@ -17,6 +17,45 @@ namespace ProjetoXadrez.camXad {
 
             Posicao pos = new Posicao(0, 0);
 
+            //cima direita
+            pos.definirValor(posicao.linha - 1, posicao.coluna - 1);
+            while (tab.posValida(pos) && podeMover(pos)) {
+                mat[pos.linha, pos.coluna] = true;
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor) {
+                    break;
+                }
+                pos.definirValor(pos.linha - 1, pos.coluna - 1);
+            }
+
+            //cima esquerda
+            pos.definirValor(posicao.linha - 1, posicao.coluna + 1);
+            while (tab.posValida(pos) && podeMover(pos)) {
+                mat[pos.linha, pos.coluna] = true;
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor) {
+                    break;
+                }
+                pos.definirValor(pos.linha - 1, pos.coluna + 1);
+            }
+
+            //baixo direita
+            pos.definirValor(posicao.linha + 1, posicao.coluna + 1);
+            while (tab.posValida(pos) && podeMover(pos)) {
+                mat[pos.linha, pos.coluna] = true;
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor) {
+                    break;
+                }
+                pos.definirValor(pos.linha + 1, pos.coluna + 1);
+            }
+
+            //baixo esquerda
+            pos.definirValor(posicao.linha + 1, posicao.coluna - 1);
+            while (tab.posValida(pos) && podeMover(pos)) {
+                mat[pos.linha, pos.coluna] = true;
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor) {
+                    break;
+                }
+                pos.definirValor(pos.linha + 1, pos.coluna - 1);
+            }
             //cima
             pos.definirValor(posicao.linha - 1, posicao.coluna);
             if (tab.posValida(pos) && podeMover(pos)) {
@@ -28,6 +67,42 @@ namespace ProjetoXadrez.camXad {
                     break;
                 }
                 pos.linha -= 1;
+            }
+            //baixo
+            pos.definirValor(posicao.linha + 1, posicao.coluna);
+            if (tab.posValida(pos) && podeMover(pos)) {
+                mat[pos.linha, pos.coluna] = true;
+            }
+            while (tab.posValida(pos) && podeMover(pos)) {
+                mat[pos.linha, pos.coluna] = true;
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor) {
+                    break;
+                }
+                pos.linha += 1;
+            }
+            //direita
+            pos.definirValor(posicao.linha, posicao.coluna + 1);
+            if (tab.posValida(pos) && podeMover(pos)) {
+                mat[pos.linha, pos.coluna] = true;
+            }
+            while (tab.posValida(pos) && podeMover(pos)) {
+                mat[pos.linha, pos.coluna] = true;
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor) {
+                    break;
+                }
+                pos.coluna += 1;
+            }
+            //esquerda
+            pos.definirValor(posicao.linha, posicao.coluna - 1);
+            if (tab.posValida(pos) && podeMover(pos)) {
+                mat[pos.linha, pos.coluna] = true;
+            }
+            while (tab.posValida(pos) && podeMover(pos)) {
+                mat[pos.linha, pos.coluna] = true;
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor) {
+                    break;
+                }
+                pos.coluna -= 1;
             }
             return mat;
         }

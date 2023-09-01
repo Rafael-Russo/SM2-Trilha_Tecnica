@@ -22,7 +22,15 @@ namespace ProjetoXadrez {
             imprimirCapturadas(partida);
             Console.WriteLine();
             Console.WriteLine("Turno: " + partida.turno);
-            Console.WriteLine("Aguardando jogada " + partida.jogadorAtual);
+            if (!partida.terminada) {
+                Console.WriteLine("Aguardando jogada " + partida.jogadorAtual);
+                if (partida.isXeque) {
+                    Console.WriteLine("XEQUE!");
+                }
+            } else {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
+            }
         }
 
         public static void imprimirCapturadas(prtdXadrez partida) {

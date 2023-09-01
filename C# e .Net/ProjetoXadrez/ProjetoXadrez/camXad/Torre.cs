@@ -3,7 +3,7 @@ using ProjetoXadrez.camTab.Enums;
 
 namespace ProjetoXadrez.camXad {
     class Torre : Peca {
-        public Torre(Tabuleiro tab, Cor cor) : base(tab, cor) {
+        public Torre(Tabuleiro tab, Cor cor, prtdXadrez partida) : base(tab, cor, partida) {
         }
 
         private bool podeMover(Posicao pos) {
