@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="estilo.css">
     <title>Gestão de Livros</title>
 </head>
+
 <body>
 
     <header>
@@ -15,7 +17,8 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-4">
                     <div class="logo">
-                        <a id="link_logo" href="https://www.hcode.com.br"><img src="img/logo-hcode.svg" alt="Logo da Hcode"></a>
+                        <a id="link_logo" href="https://www.hcode.com.br"><img src="img/logo-hcode.svg"
+                                alt="Logo da Hcode"></a>
                     </div>
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-8 title">
@@ -43,7 +46,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+
                         </tbody>
                     </table>
 
@@ -62,14 +65,16 @@
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
                                     <label for="form_book_name">Nome do Livro</label>
-                                    <input type="text" class="form-control" name="name" id="form_book_name" placeholder="Digite o nome do livro...">
+                                    <input type="text" class="form-control" name="name" id="form_book_name"
+                                        placeholder="Digite o nome do livro...">
                                 </div>
                             </div>
 
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
                                     <label for="form_author_name">Nome do Autor</label>
-                                    <input type="text" class="form-control" name="author" id="form_author_name" placeholder="Digite o nome do autor...">
+                                    <input type="text" class="form-control" name="author" id="form_author_name"
+                                        placeholder="Digite o nome do autor...">
                                 </div>
                             </div>
                         </div>
@@ -96,22 +101,66 @@
     <script src="jquery-3.7.1.min.js"></script>
 
     <script>
-    
-        $(document).ready(function(){
 
-            $.ajax({
-                url: 'http://localhost:3000/books',
-                success: function(res){
-                    console.log(res);
-                },
-                error: function(err){
-                    console.error(err);
-                }
+        $(document).ready(function () {
+
+            function loadData() {
+                $.get('http://localhost:3000/books', function (res) {
+                    $('table tbody').html('');
+                    $.each(res, function (i, item) {
+                        let tr = `
+                            <tr>
+                                <td>${item.name}</td>
+                                <td>${item.author}</td>
+                            </tr>
+                        `;
+
+                        $('table tbody').append(tr);
+                    });
+                });
+
+                // $.ajax({
+                //     url: 'http://localhost:3000/books',
+                //     success: function (res) {
+                //         $.each(res, function (i, item) {
+                //             let tr = `
+                //             <tr>
+                //                 <td>${item.name}</td>
+                //                 <td>${item.author}</td>
+                //             </tr>
+                //         `;
+
+                //             $('table tbody').append(tr);
+                //         });
+
+                //         console.log(res);
+                //     },
+                //     error: function (err) {
+                //         console.error(err);
+                //     }
+                // });
+            }
+
+            loadData();
+
+            $('#form_create_book').on('submit', function (event) {
+                event.preventDefault();
+
+                let data = {};
+
+                $.each($(this).serializeArray(), function (i, item) {
+                    data[item.name] = item.value;
+                });
+
+                $.post('http://localhost:3000/books', data, function (res) {
+                    loadData();
+                });
             });
 
         });
-        
+
     </script>
 
 </body>
+
 </html>

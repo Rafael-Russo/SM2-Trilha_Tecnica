@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="loader.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cadastro</h1>
+        <form action="">
+            <div class="row">
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="">Nome: </label>
+                        <input type="text" placeholder="Digite seu nome" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="">Email: </label>
+                        <input type="text" placeholder="Digite seu nome" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="">Idade: </label>
+                        <input type="text" placeholder="Digite seu nome" class="form-control">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="">Mensagem: </label>
+                        <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-outline-primary">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./loader.js"></script>
+
+    <script>
+        $(()=>{
+            $('[type=submit]').on('click', e => {
+                e.preventDefault();
+
+                $('body').load();
+            });
+        });
+    </script>
+</body>
+
+</html>
