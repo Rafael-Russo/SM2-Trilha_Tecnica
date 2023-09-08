@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/select2/dist/css/select2.css">
+    <title>Select 2</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Hcode Treinamentos1</h1>
+        <form action="">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="">Name: </label>
+                        <input type="text" name="name" id="" class="form-control">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="">Email: </label>
+                        <input type="email" name="email" id="" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="">Selecione seu estado</label>
+                        <select name="" id="select-estados" class="form-control">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="">Selecione sua cidade</label>
+                        <select name="" id="select-cidades" class="form-control">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/select2/dist/js/select2.min.js"></script>
+
+    <script>
+        $(() => {
+            function filterResults(dataToFilter, paramsToFilter) {
+                 return [...dataToFilter].filter((item) => {
+                    let regex = eval(`/${paramsToFilter.term}/gi`);
+                    let result = item.nome.match(regex);
+
+                    return (result);
+                });
+            }
+
+            $('#select-estados').select2({
+                ajax: {
+                    url: 'https://servicodados.ibge.gov.br/api/v1/localidades/estados',
+                    processResults: (data, params) => {
+                        data = filterResults(data, params);
+                        return {
+                            results: data
+                        };
+                    },
+                    data: (params) => {
+                        return {
+                            q: params.term
+                        };
+                    }
+                },
+                templateResult: (data) => {
+                    return data.nome;
+                },
+                templateSelection: (data) => {
+                    return data.nome;
+                }
+            });
+            $('#select-estados').on('select2:select', event => {
+                let idState = event.params.data.id;
+
+                $('#select-cidades').select2({
+                    ajax: {
+                        url: `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${idState}/distritos`,
+                        processResults: (data, params) => {
+                            data = filterResults(data, params);
+                            return {
+                                results: data
+                            }
+                        },
+                        data: params => {
+                            return {
+                                q: params.term
+                            }
+                        }
+                    },
+                    templateResult: data => {
+                        return data.nome
+                    },
+                    templateSelection: (data) => {
+                        return data.nome
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
