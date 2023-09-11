@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridge", "Bridge\Bridge.csproj", "{8BAD2140-3658-480E-9CB3-AA4840E84D6F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Behavioral", "Behavioral", "{49B88433-FEE0-42DB-B129-0E6E671D6C9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsibility", "ChainOfResponsibility\ChainOfResponsibility.csproj", "{8498D6A4-9C26-4831-9E98-2C2AFDB1C882}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,10 @@ Global
 		{8BAD2140-3658-480E-9CB3-AA4840E84D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BAD2140-3658-480E-9CB3-AA4840E84D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BAD2140-3658-480E-9CB3-AA4840E84D6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8498D6A4-9C26-4831-9E98-2C2AFDB1C882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8498D6A4-9C26-4831-9E98-2C2AFDB1C882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8498D6A4-9C26-4831-9E98-2C2AFDB1C882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8498D6A4-9C26-4831-9E98-2C2AFDB1C882}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +61,7 @@ Global
 		{DB7FE177-526B-465A-8C55-0A6AE42BED47} = {83A40B4C-90ED-490E-BD72-B3ED180FA679}
 		{3346AF5C-4164-4AD8-B96A-15201F1C1C52} = {1AD4C29C-D945-4042-9775-7AFBF37448D9}
 		{8BAD2140-3658-480E-9CB3-AA4840E84D6F} = {1AD4C29C-D945-4042-9775-7AFBF37448D9}
+		{8498D6A4-9C26-4831-9E98-2C2AFDB1C882} = {49B88433-FEE0-42DB-B129-0E6E671D6C9E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9600B56A-E920-48E5-A1B7-4EC7B0E2349A}
