@@ -172,6 +172,7 @@ function getBalance(){
         console.log(chalk.bgBlue.black(
             `O saldo da sua conta é R$${accountData.balance}`
         ));
+        operation();
     }).catch((err) => console.log(err));
 }
 
@@ -198,7 +199,6 @@ function withdraw(){
             const amount = answer['amount'];
             
             removeAmount(accountName, amount);
-            operation();
         }).catch((err) => console.log(err));
     }).catch((err) => console.log(err));
 }
