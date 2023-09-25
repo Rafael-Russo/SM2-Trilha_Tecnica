@@ -1,0 +1,8 @@
+<h1>Página com Handlebars!</h1>
+<p>Separados na arquitetura do projeto.</p>
+<p>O nome do usuário é {{user.name}} {{user.surname}}</p>
+{{#if auth}} 
+<p>
+    Você está autenticado, <a href="/dashboard">clique aqui</a> para acessar a área de membros!
+</p>
+{{/if}}

@@ -1,0 +1,19 @@
+<h1>Página com Handlebars!</h1>
+{{#if approved}}
+  <p>
+    Parabéns, seu cadastro foi aprovado!
+  </p>
+{{else}}
+    <p>
+        Seu cadastro necessita de aprovação!
+    </p>
+{{/if}}
+<p>Separados na arquitetura do projeto.</p>
+<p>O nome do usuário é {{user.name}} {{user.surname}}</p>
+{{#if auth}}
+  <p>
+    Você está autenticado,
+    <a href="/dashboard">clique aqui</a>
+    para acessar a área de membros!
+  </p>
+{{/if}}
