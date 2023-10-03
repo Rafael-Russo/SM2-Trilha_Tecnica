@@ -9,9 +9,9 @@ const getUserByToken = async(token) => {
     const decoded = jwt.verify(token, 'nossosegredo');
     const userId = decoded.id;
 
-    const user = await User.findById({_id: userId});
+    const user = await User.findOne({_id: userId});
 
-    return user
+    return user;
 }
 
 module.exports = getUserByToken;
