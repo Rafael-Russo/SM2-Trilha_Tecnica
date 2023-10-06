@@ -1,0 +1,7 @@
++ Trilha de desenvolvimento
+
+2. Antes de preencher, insira o seguinte e-mail como administrador em todos bots que irá submeter: partner.cert@blip.ai 
+
+Utilização do BuiderAddictions (extensão do Chrome)
+
+regex101.com (site para verificar expressões do Regex(Regular expressions ou expressões regulares))

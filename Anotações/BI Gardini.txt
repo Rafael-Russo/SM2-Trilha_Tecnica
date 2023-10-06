@@ -1,0 +1,18 @@
+Value Paid (Sem .)
+Iif((Contains([ Value Paid ], '.')) And (CharIndex('.',[ Value Paid ]) < (Len([ Value Paid ]) - 4)), Replace([ Value Paid ],'.', '') , [ Value Paid ] )
+
+Value Paid (Sem . e ,)
+Iif((Contains([Value Paid (Sem .)], ',')) And (CharIndex(',', [Value Paid (Sem .)]) < (Len([Value Paid (Sem .)]) - 4)), Replace([Value Paid (Sem .)],',', '') , [Value Paid (Sem .)] )
+
+Value Paid (Tratado)
+Iif(
+    IsNullOrEmpty(Trim([Value Paid (Sem . e ,)])) Or Contains([Value Paid (Sem . e ,)], '-'),
+    0,
+ToDouble(
+    Replace(
+        Replace([Value Paid (Sem . e ,)], ',', '.') ,'$', '')
+    )
+)
+
+Value Paid (por Contrato)
+aggr(Sum([Value Paid (Tratado)]), [Matter])

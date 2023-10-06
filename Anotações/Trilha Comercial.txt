@@ -1,0 +1,245 @@
+﻿+ BI (Business Inteligence ou Inteligência de Negócio)
+
+
+São sistemas que validam conjuntos de dados, coletam dados e apresentam uma visualização "amigável" deles para o usuário, ajudando-o na tomada de decisões, a eliminar a ineficiência e se adaptar às mudanças no mercado.
+Ex: SM2by, Power BI (Microsoft) e Tableu.
+
+
++ SEO (Search Engine Optimization ou Otimização para motores de busca)
+
+
+SEO consiste de técnicas para fazerem seu site ser recomendado por motores de busca, como o Google (que é o maior de todos). Antigamente os sites usavam de técnicas de Black Hat, como colocar textos escondidos com termos relacionados ao conteúdo para aumentar seu número de acessos e ser um dos sites mais recomendados, mas devido as atualizações dos motores de busca, essas técnicas foram consideradas ruins para o fim desejado, e esses motores de buscas começaram a utilizar algoritmos que priorizavam páginas com qualidade e analisar o contexto da busca do usuário, mas ainda existem técnicas que auxiliam a probabilidade dos buscadores recomendarem seu site, essas são as técnicas de SEO.
+
+
++ IAs (Inteligência artificial)
+
+
+Recentemente no mercado muitas IAs foram desenvolvidas e disponibilizadas para auxiliar em diversas questões, são tecnologias que foram treinadas de diferentes maneiras para cumprirem com seu papel. As categorias bases delas são definidas principalmente por como elas se comportam e são treinadas, elas são: Assistida, onde a IA requer intervenção humana para realizar tarefas, Autônoma, onde a IA é capaz de operar de forma independente, normalmente utilizando algoritmos de aprendizado de máquina (Machine Learning), Automatizada, projetada para realizar tarefas repetitivas, como chatbots, e Aumentada, que é projetada para trabalhar em conjunto com seres humanos, tornando as suas atividades mais eficientes.
+Exemplos de IAs: ChatGPT, Jasper, Synthesia, DoNotPay e Dall-E 2.
+
+
++ Bancos de dados
+
+
+Bancos de dados são feitos para armazenar e organizar dados, alguns dos DBMS (Data Base Management System ou SGBD sistema gerenciador de banco de dados) são sistemas usados para construir e gerenciar esses bancos de dados relacionais ou não relacionais, alguns deles são SQL, Oracle, Progress.
+
+
++ ERPs (Enterprise Resource Planning ou Sistema de gestão empresarial)
+
+
+Alguns exemplos são o Protheus, RM e Datasul, todos são softwares da Totvs para finalidades diferentes dependendo da necessidade dos clientes. Esses sistemas servem para gerenciar dados da empresa, como gerenciamentos fiscais, gastos e lucros, auxiliando a gestão de recursos.
+
+
++ POC (Proof of concept ou Prova de conceito)
+
+
+Diferente do MVP (Minimum viable product), que é uma prova de que o produto vai "funcionar"/dar certo comercialmente, ou a Prova de conceito no meio comercial, que normalmente pode ser validada com um crowdfunding(algo como uma "vaquinha online" ex: catarse). Essa Prova de conceito serve para analisar e comprovar a viabilidade do produto no conceito funcional, evidencia documentada de que um software pode ser bem-sucedido, analisando possíveis erros técnicos que podem interferir nos resultados esperados.
+
+
++ TOP e TIN
+
+
+- TOP = Totvs Construção Obras e Projetos
+- TIN = Totvs Construção Gestão de Imóveis
+
+
+são plataformas de gerenciamento direcionados à construção civil, top tendo foco a gestão na parte de construção e o tin com foco na gestão de vendas/alugueis
+
+
++ Modelos de contrato
+
+
+- Time & Material = o cliente paga pelas horas gastas um valor/h combinado previamente, normalmente utilizado para soluções de curto prazo, o contratante assume todos os riscos assumindo que vai receber um produto de qualidade equivalente ao valor.
+- Fechada = o cliente e o fornecedor combinam previamente um valor e o produto, dividindo os riscos entre os dois. O cliente de receber um produto de qualidade inferior ao valor, ou o fornecedor, entregando um produto com qualidade superior ao combinado.
+- Body Shop = o cliente contrata um consultor para ajudá-lo a cumprir as exigências do projeto, é um método de terceirização do serviço de TI onde os profissionais podem ser vistos como produtores.
+- Banco de Horas = o fornecedor do serviço tem horas a cumprir, e o cliente paga de acordo com esse valor, porém caso exceda ou falte horas a serem cumpridas, elas devem ser compensadas por cada um dos lados em seus respectivos casos.
+
+
++ CRM (Customer Relationship Management ou Gestão de relacionamento com o cliente)
+
+
+não se limita a software, é um processo utilizado para prever as necessidades dos clientes, ajudando os fornecedores a pouparem energia e esforço com atitudes ineficazes, acelerando e simplificando os processos de vendas. Ajuda a produzir mais em menos tempo.
+
+
++ SLA (Service Level Agreement ou Acordo de Nível de Serviço.)
+
+
+O SLA serve para transmitir tanto para o cliente quanto para o fornecedor a segurança na execução dos serviços. Ele deixa claro todas as obrigações que os dois lados devem honrar. Garante que nenhuma das partes seja lesada, porque caso isso ocorra, o lado que não cumpriu sua parte será penalizado.
+
+
++ B2B e B2C (Business to Business e Business to Consumer)
+
+
+B2B é um modelo de negócio em que o cliente final é uma empresa.
+Ex: SM2, indústrias que vendem para fornecedores, fábricas para supermercados.
+B2C é um modelo de negócio em que o cliente final é o consumidor.
+Ex: Supermercados, lojas de roupas, lojas que costumamos frequentar no nosso dia a dia.
+
+
++ ERP SAP - sigla alemã (Systeme, Anwendungen und Produkte in der Datenverarbeitung ou Sistemas, Aplicativos e Produtos para Processamento de Dados)
+
+
+SAP é um tipo de sistema ERP, em que ajuda a empresa a gerenciar seus dados, como estoque, materiais e produtos.
+
+
++ Projeto
+
+
+O projeto de TI serve para agilizar, organizar e tornar mais eficiente as atividades de sua equipe responsável, uma vez que seguirão um plano com todos os processos que devem ser executados
+
+
++ BPM (Business Process Management ou Gerenciamento de Processos de Negócio)
+
+
+É uma abordagem que tem como conceito enxergar o fluxo de processos, medir, otimizar e automatizá-los, não é uma tecnologia em si, mas pode ser auxiliado por softwares que tornam mais fácil essa visualização.
+Já existe a muito tempo atrás, desde a época dos egípcios e romanos. Mas a teorização desse processo é recente.
+Ex: Bizagi Modeler, Heflo, Supravizio, Visio, ARIS, BPMN.io, Modelio, Adonis, Draw.io
+
+
++ Take Blip
+
+
+Parceiro SM2, focado em chatbots, provavelmente utilizam tecnologias de Inteligência Artificial Automatizada, por causa dos chatbots.
+
+
++ Infosys
+
+
+Parceiro SM2, presta serviços de TI e consultorias, provavelmente utiliza do modelo de contrato BodyShop majoritariamente.
+Empresa Indiana.
+
+
++ Apresentação Comercial da SM2
+
+
+Serviços: BI 100% integrado, Hunting?, BPM, Gestão de projeto, E-commerce B2B & B2C e Full Commerce, SEO, ERPs Totvs e SAP, Desenvolvimento de Sistemas, Administração de BD e Social Media & Blog Post.
+
+
+Principais Clientes: Contaliza, Oncoclinicas, Ideal, Direcional, Hermes Pardini, Agro Competence, Equinox Gold, Grupo JCHEBLY, lundin mining, Regina, Geosol, ISQ, Bernoulli, Mineração Vale Verde, Atlantic Nickel, BRZ Empree., Clube Recreativo Dom Pedro II, CDL, Pilar Gold, Belgo arames, Engesult, BTC (Brazil Tower Company), Ciências Médicas, ambientuus.
+
+
+Focos: Agilidade e Parceria com clientes
+
+
++ Integração de sistemas
+
+
+Consiste na união de sistemas distintos de uma forma automatizada, esse processo ajuda a aumentar a produtividade do time, melhorar a qualidade de atendimento ao cliente, melhorar a reputação no mercado oferecendo um diferencial, adquirir ou trocar ou atualizar tecnologias e sistemas, diminuir retrabalho de inserir as mesmas informações em diferentes sistemas, diminuir custos e erros.
+
+
+Tipos de Integrações:
+Banco a Banco - Sistemas diferentes compartilhando um mesmo banco de dados.
+Trocas e compartilhamento de dados eletrônicos - Uma terceira plataforma que "traduz" os dados compartilhados de outros sistemas
+API (application programming interface ou interface de programação de aplicação) - Permite que as informações de sistemas circulem em tempo real, funcionando como uma ponte entre dois sistemas
+
+
+5 passos para integração:
+1- Definir Objetivos
+2- Fazer configurações personalizada
+3- Definir o tipo de integração
+4- Avaliar e Preparar os dados da empresa
+5- Preparar para a transição
+
+
++ Hunting
+
+
+Essa estratégia foi criada para reduzir a dificuldade para encontrar talentos com as habilidades que a empresa necessita, já que estima-se que 76% dos empregadores de TI tem essa dificuldade.
+O Hunting se baseia na busca ativa pelo candidato, estando ele empregado ou não. Significa ir atrás dos talentos de maneira proativa e convidá-los para participar de um processo seletivo. Isso auxilia a reduzir o tempo de fechamento das vagas, melhorar a qualidade das contratações e otimizar o tempo do RH.
+
+
++ DW (Data Warehouse ou Armazém de dados)
+
+
+DW é um tipo de DBMS que tem como propósito auxiliar em atividades de BI, especialmente análise avançada. Os dados da DW normalmente são grandes quantidade, dados históricos e são derivados de uma ampla variedade de fontes.
+Geralmente estão incluídos numa DW: Banco de dados relacional para armazenar e gerenciar os dados, uma solução de extração (ELT - Extract, Load e Transform) para preparar os dados para análise, análise estatística, relatório e recurso de mineração de dados.
+Benefícios: Orientados para o assunto, Integrados, Não volátil e Variáveis de acordo com o tempo.
+
+
++ Bancos de dados mais usados
+
+
+Progress é uma linguagem focada em desenvolvimento de sistemas ERPs, foi criada inicialmente para atender o sistema operacional Positivo, com intuito de manipular grandes volumes de dados, mas também é uma alternativa para bancos de dados relacionais com alto desempenho e segurança. Um dos maiores atrativos dessa linguagem é sua portabilidade e independência.
+
+
+5 Bancos de dados mais usados no mundo: 
+1. Oracle;
+2. MySql;
+3. Sql Server;
+4. PostgreSql;
+5. MongoDB;
+
+
++ Fábrica de Softwares
+
+
+Fábrica de software é uma empresa que constrói e presta manutenção de sistemas e aplicações web e mobile, maximizando a produção, com intuito de reduzir custos no desenvolvimento. Normalmente, os processos e metodologias estão voltadas para desenvolvimento com padronizações em algumas etapas, assim como a reutilização de componentes anteriormente desenvolvidos.
+
+
+Importante! O foco das fábricas de Softwares é a agilidade de desenvolvimento de aplicações web, mobile ou desktop. Como o foco é em agilidade, normalmente os produtos dessas fábricas são baseados em moldes já feitos anteriormente, portanto o nível de personalização e customização do produto pode ser limitado, e o cronograma fechado pode não permitir flexibilidade.
+
+
++ Suporte AMS (Application Management Services ou Serviços de gerenciamento de aplicativos)
+
+
+Modelo de suporte personalizado com o intuito de fazer monitoramentos e otimizar processos. Também tem o papel de atuar de forma proativa, identificando necessidades de melhorias, agindo antecipadamente, aplicando mudanças e impedindo o surgimento de problemas.
+
+
++ Licenciamento de Software
+
+
+O licenciamento de software é a permissão legal que o desenvolvedor libera para uma empresa, para que ela utilize dentro da legalidade o software em questão. Instrumento que regula o uso do software e gera benefícios para ambas as partes, uma vez que protege os direitos autorais do criador do sistema ao mesmo tempo em que garante à empresa o melhor aproveitamento possível do serviço que contratou.
+
+
+Tipos de Licenças de softwares comuns:
+- Uso temporário - Permite que a empresa utilize o software de forma limitada por tempo e dispositivos que podem ser instalados.
+- Aquisição perpétua - Concede ao contratante o direito de uso permanente do software.
+- Software Livre - A empresa tem liberdade para modificar e adaptar o software de acordo com suas necessidades.
+- SAAS (Software as a Service) - Softwares baseados em mensalidades, fica hospedado na nuvem e caso a mensalidade perca a validade, a empresa não poderá mais utilizar o sistema.
+- EULA (End User License Agreement) - Serve para limitar as regras de distribuição e modificações. Costuma aparecer durante a instalação.
+- Gratuito/Free - Dispõe de um contrato com regras e determinações sobre como o sistema pode ser utilizado.
+
+
++ Sistema Cloud ou Cloud Computing
+
+
+Tecnologia que permite acesso remoto a softwares, armazenamento de arquivos e processamento de dados pela internet.
+
+
+Modalidades:
+- SaaS - Software as a Service
+- Paas - Plataform as a Service
+- IaaS - Infrastructure as a Service
+
+
+Principais Serviços de Cloud: AWS, Microsoft e Google
+
+
+
++ Linguagens de programação do Protheus, Datasul, RM e SAP
+
+
+- Protheus: AdvPL (Advanced Protheus Language) - Linguagem baseada em C++, possibilita utilizar os sistemas de ERP no Mobile, possibilitando a customização desses sistemas ERPs.
+- Datasul: Progress ou OpenEdge ABL (Advanced Business Language) - criada e mantida por PSC (Progress Software Corporation), é uma 4GL (Linguagem de programação de 4ª geração ou fourth-generation programming language), conhecida também por Progress ou Progress 4GL. É uma linguagem que tem sua própria integração com banco de dados relacionais, é portátil entre sistemas da computação e permite acesso a várias fontes de dados populares sem ter que aprender métodos de acesso de dados.
+- RM: .NET - Framework de programação que unifica as principais linguagens de programação da Microsoft, C#, VB.NET e F#, sem ter que utilizar bibliotecas separadas, além de possuir um compilador e máquina virtual.
+- SAP: ABAP (Advanced Business Application Programming ou Programação de Aplicações de Negócios Avançada) - Criada pela SAP para facilitar o desenvolvimento de relatórios, suas principais características são: Código fonte embutido, Mecanismo de controle de versão, Compilação e interpretação do código, comandos e sintaxes em nível alto, Tipos de programas Report(responsável por gerar relatórios) e Dialog(voltado para a interação com o usuário), entre outros.
+
+
++ PMO (Project Manager Office ou Escritório de Gerência de Projetos)
+
+
+- Relacionado com os projetos organizacionais, responsável por possibilitar um acompanhamento próximo das etapas de planejamento e execução de planos empresariais. É o setor responsável por implementar e garantir a manutenção dos padrões de gerenciamento de projeto, dando segurança quanto a otimização dos processos e controle das etapas de execução. Promove mais agilidade e segurança para a empresa, já que o seu dever é de se preparar para as mudanças de mercado no menor tempo possível.
+- O nível de maturidade do PMO é definido pelo PMO Maturity Cube, essas maturidades são divididas em três dimensões(básico, intermediário e avançado), três amplitudes (corporativo, departamental e projeto) e três abordagens(operacional, tático e estratégico).
+- A maturidade é definida depois de olhar esses pontos. os percentuais entre 0% e 33% são considerados de maturidade básica, 34% e 66% são considerados intermediários e os níveis de 67% e 100% são considerados avançados.
+
+
+- Darci Prado
+Consultor da IBM, criador do modelo prado-MMGP, diferente do PMO Maturity Cube, o MMGP consiste de 5 níveis e 7 dimensões, onde cada nível pode conter até 7 dimensões em diferentes intensidades e peculiaridades
+
+
++ Portfólio, Programas e Projetos
+
+
+- Projetos: O PMI (Project Management Institute) trata projeto como "esforço temporário empreendido para criar um novo produto, serviço ou resultado exclusivo". É mais relacionado ao nível operacional do que programas e portfólios. Está limitado a fatores críticos como tempo, custo e recursos. Assume uma forma clara, planejada e controlada.
+- Programa: Conjunto de projetos coordenados entre si de forma articulada e dinâmica e que visam objetivos comuns. Objetivos mais amplos que projetos. Não inclui a descrição das atividades e outros aspectos operacionais(não programado/planejado?). Pode envolver atividades repetitivas e pode ser que não tenha data de finalização especifica.
+- Portfólio: Agrupamento de Programas e Projetos com o objetivo de obter sucesso no desenvolvimento de produtos ou serviços, além da maximização da eficiência na corporação.É mais amplo do que os outros dois conceitos e está mais interligado aos tomadores de decisão da organização. Objetivo principal: ter visão estratégica dos projetos para a maximização dos resultados com base nos recursos escassos.

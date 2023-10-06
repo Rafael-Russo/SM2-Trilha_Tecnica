@@ -1,0 +1,32 @@
+Pontos citados no projeto inicial da Gardini Law
+
+- cadastro do cliente junto com o cadastro do contrato
+- preenchimento do referraw (cadastro dos contratos), lista de referraws (select box) (mesma coisa da forma de pagamento)
+- mesma coisa para practice area (reforço)
+- preenchimento automatico com Tab e seleção com o Enter
+
+- Considerações com a termologia
+
+- Depois de editar o contrato, estão sumindo as informações da lista de pagamento, como data e valores.
+"se ja tiverem valores pagos, eles vão sumir?" (não tem mdanças depois do pagamentos que ja passaram)
+
+- Outro campo com o valor total menos o valor simulado na tela de edição (valor restante para a finalização do contrato)
+- calcular automaticamente parcelas faltantes de acordo com valor
+- Campos de data: possibilidade de abrir um calendario para selecionar datas
+
+
+=======================================================================
+
+Anotações internas
+
+- Depois que um contrato foi completamente pago o "Contract Status" não foi alterado.
+- Mesmo depois de simular um contrato com pagamento maior que o valor do contrato em si, não foi avisado o valor excedente
+- Depois de Cancelar um contrato e atualizar os pagamentos o status de cancelado das parcelas são atualizados também
+
+
+=======================================================================
+
+Reunião surpresa
+
+- Retirar os numeros do nome do cliente na planilha que a Carolina enviou
+- Colocar metter, Status do contrato, Valor do contrato, data do contrato, valor da parcela, data de vencimento, numero da parcela, metodo de pagamento
