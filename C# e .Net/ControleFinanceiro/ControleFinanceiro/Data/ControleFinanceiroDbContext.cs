@@ -4,7 +4,7 @@ using ControleFinanceiro.Models;
 
 namespace ControleFinanceiro.Data
 {
-    public class ControleFinanceiroDbContext : DbContext
+    public class ControleFinanceiroDbContext : IdentityDbContext
     {
         public ControleFinanceiroDbContext(DbContextOptions<ControleFinanceiroDbContext> options) : base(options)
         {

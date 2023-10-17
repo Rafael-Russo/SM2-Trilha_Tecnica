@@ -1,18 +1,16 @@
-﻿@using ControleFinanceiro.Models.Enums;
-@model ControleFinanceiro.Models.Expense
-
-@Html.LabelFor(model => model.DueDate)
-@Html.DisplayFor(model => model.DueDate)
+﻿@model ControleFinanceiro.Models.Expense
 
 @{
     ViewData["Title"] = "Create";
 }
+
 <h1>Create</h1>
 
 <h4>Expense</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
+        <h1>@ViewData["error"]</h1>
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -32,18 +30,19 @@
             </div>
             <div class="form-group">
                 <label asp-for="Type" class="control-label"></label>
-                <select asp-for="Type" class="form-control" asp-items="Html.GetEnumSelectList<ExpenseType>()"></select>
+                <select asp-for="Type" class="form-control" asp-items="Html.GetEnumSelectList<ExpenseType>()">
+                    <option selected="selected" value=""></option>
+                </select>
                 <span asp-validation-for="Type" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<ExpenseStatus>()"></select>
+                <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<ExpenseStatus>()">
+                    <option selected="selected" value=""></option>
+                </select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="UserId" class="control-label"></label>
-                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
-            </div>
+                <input type="hidden" asp-for="UserId" class ="form-control" value="1" />
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

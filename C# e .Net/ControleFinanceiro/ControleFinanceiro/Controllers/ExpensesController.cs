@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ControleFinanceiro.Data;
 using ControleFinanceiro.Models;
+using NuGet.Protocol;
+using System.Diagnostics;
 
 namespace ControleFinanceiro.Controllers
 {
@@ -48,7 +50,6 @@ namespace ControleFinanceiro.Controllers
         // GET: Expenses/Create
         public IActionResult Create()
         {
-            ViewData["UserId"] = new SelectList(_context.User, "Id", "Id");
             return View();
         }
 
@@ -59,14 +60,16 @@ namespace ControleFinanceiro.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Description,DueDate,Cost,Type,Status,UserId")] Expense expense)
         {
-            if (ModelState.IsValid)
+            try
             {
                 _context.Add(expense);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UserId"] = new SelectList(_context.User, "Id", "Id", expense.UserId);
-            return View(expense);
+            catch
+            {
+                return View(expense);
+            }
         }
 
         // GET: Expenses/Edit/5
@@ -98,7 +101,7 @@ namespace ControleFinanceiro.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            try
             {
                 try
                 {
@@ -118,8 +121,11 @@ namespace ControleFinanceiro.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UserId"] = new SelectList(_context.User, "Id", "Id", expense.UserId);
-            return View(expense);
+            catch
+            {
+                ViewData["UserId"] = new SelectList(_context.User, "Id", "Id", expense.UserId);
+                return View(expense);
+            }
         }
 
         // GET: Expenses/Delete/5
@@ -155,14 +161,14 @@ namespace ControleFinanceiro.Controllers
             {
                 _context.Expense.Remove(expense);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ExpenseExists(int id)
         {
-          return (_context.Expense?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Expense?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
