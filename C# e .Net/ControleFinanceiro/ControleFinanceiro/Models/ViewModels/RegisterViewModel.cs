@@ -1,8 +1,10 @@
-﻿namespace ControleFinanceiro.Models.ViewModels
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace ControleFinanceiro.Models.ViewModels
 {
+    [Keyless]
     public class RegisterViewModel
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }

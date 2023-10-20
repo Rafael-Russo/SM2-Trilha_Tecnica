@@ -1,4 +1,5 @@
 using ControleFinanceiro.Data;
+using ControleFinanceiro.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,7 +9,7 @@ var connectionString = builder.Configuration.GetConnectionString("ControleFinanc
 builder.Services.AddDbContext<ControleFinanceiroDbContext>(options =>
                     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<Account>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ControleFinanceiroDbContext>();
 
 //builder.Services.AddIdentity<IdentityUser, IdentityRole>(config =>
@@ -34,6 +35,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseCookiePolicy();
 
 app.UseRouting();
 
