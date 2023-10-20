@@ -1,0 +1,6 @@
+zendesk - ticket de SAC  (verificar se zen desk manda webhooks)
+api intermediaria - armazenar preços de entrega
+links - consultar estoques / fazer pedidos / acompanhar pedidos
+
+atendimento humano em qualquer momento do processo
+
