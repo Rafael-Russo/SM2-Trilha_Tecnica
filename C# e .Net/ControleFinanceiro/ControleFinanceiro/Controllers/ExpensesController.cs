@@ -7,23 +7,28 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ControleFinanceiro.Data;
 using ControleFinanceiro.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace ControleFinanceiro.Controllers
 {
     public class ExpensesController : Controller
     {
         private readonly ControleFinanceiroDbContext _context;
+        private readonly UserManager<Account> _userManager;
+        private readonly SignInManager<Account> _signInManager;
 
-        public ExpensesController(ControleFinanceiroDbContext context)
+        public ExpensesController(ControleFinanceiroDbContext context, UserManager<Account> userManager, SignInManager<Account> signInManager)
         {
             _context = context;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         // GET: Expenses
         public async Task<IActionResult> Index()
         {
               return _context.Expense != null ? 
-                          View(await _context.Expense.ToListAsync()) :
+                          View(await _context.Expense.Where(e => e.AccountId.Equals(_userManager.GetUserId(User))).ToListAsync()) :
                           Problem("Entity set 'ControleFinanceiroDbContext.Expense'  is null.");
         }
 

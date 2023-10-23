@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Net;
 using System.Linq;
+using System.Xml.Linq;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using ControleFinanceiro.Data;
 using ControleFinanceiro.Models;
-using Microsoft.AspNetCore.Authorization;
 using ControleFinanceiro.Models.ViewModels;
-using Microsoft.AspNetCore.Identity;
-using System.Net;
-using System.Xml.Linq;
 
 namespace ControleFinanceiro.Controllers
 {
@@ -110,7 +110,7 @@ namespace ControleFinanceiro.Controllers
         }
 
         // GET: Accounts/Details/5
-        public async Task<IActionResult> Details(string? id)
+        public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null || _context.Account == null)
             {
@@ -128,7 +128,7 @@ namespace ControleFinanceiro.Controllers
         }
 
         // GET: Accounts/Edit/5
-        public async Task<IActionResult> Edit(string? id)
+        public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null || _context.Account == null)
             {
@@ -148,7 +148,7 @@ namespace ControleFinanceiro.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,Email,Password,Balance")] Account account)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Name,Balance,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] Account account)
         {
             if (!id.Equals(account.Id))
             {
@@ -160,7 +160,7 @@ namespace ControleFinanceiro.Controllers
             {
                 try
                 {
-                    _context.Update(account);
+                    Console.WriteLine(_context.Update(account));
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -176,9 +176,9 @@ namespace ControleFinanceiro.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(HomeController.Index), "Home");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ModelState.AddModelError(string.Empty, "Erro: " + ex);
                 Console.WriteLine("Erro: " + ex);
@@ -187,7 +187,7 @@ namespace ControleFinanceiro.Controllers
         }
 
         // GET: Accounts/Delete/5
-        public async Task<IActionResult> Delete(string? id)
+        public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null || _context.Account == null)
             {
@@ -207,7 +207,7 @@ namespace ControleFinanceiro.Controllers
         // POST: Accounts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             if (_context.Account == null)
             {
@@ -220,13 +220,13 @@ namespace ControleFinanceiro.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            await _signInManager.SignOutAsync();
+            return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
         private bool AccountExists(Guid id)
         {
-            string strId = id.ToString();
-            return (_context.Account?.Any(e => e.Id.Equals(strId))).GetValueOrDefault();
+            return (_context.Account?.Any(e => e.Id.Equals(id))).GetValueOrDefault();
         }
     }
 }

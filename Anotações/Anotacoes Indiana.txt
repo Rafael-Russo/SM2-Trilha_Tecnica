@@ -1,6 +1,15 @@
-zendesk - ticket de SAC  (verificar se zen desk manda webhooks)
+zendesk - ticket de SAC  (verificar se manda webhooks)
+VTEX - Consumir estoque
+Linx iTec - consultar preços / fazer pedidos / acompanhar pedidos (verificar se manda webhooks)
+SmartSales (produtos, categorias, grupos)
+
 api intermediaria - armazenar preços de entrega
-links - consultar estoques / fazer pedidos / acompanhar pedidos
+
+é necessario criar banco de dados para armazenar todas as tabelas de preço
 
 atendimento humano em qualquer momento do processo
 
+verificar se o smartsales consegue verificar os preços de produtos baseados no cep do cliente / tabela de preços de acordo com localização do cliente
+
+obs:
+SmartSales tem integração com VTEX (intrigg para VTEX) para informar status dos pedidos para os clientes

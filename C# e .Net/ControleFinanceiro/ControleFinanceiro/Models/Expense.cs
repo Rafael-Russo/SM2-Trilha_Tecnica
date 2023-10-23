@@ -12,6 +12,7 @@ namespace ControleFinanceiro.Models
         public ExpenseStatus Status { get; set; }
         public Guid AccountId { get; set; }
 
+        public Expense() { }
         public Expense(string description, DateTime dueDate, double value, ExpenseType type, ExpenseStatus status, Guid accountId)
         {
             Description = description;
