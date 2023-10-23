@@ -2,18 +2,22 @@
 
 namespace ControleFinanceiro.Models
 {
-    public class Account : IdentityUser
+    public class Account : IdentityUser<Guid>
     {
-        public override string Id { get { return base.Id; } }
         public string Name { get; set; }
-        public string Email { get; set; }
-        public string Password { get { return base.PasswordHash; } }
         public double Balance { get; set; }
         public ICollection<Expense> Expenses { get; set; } = new List<Expense>();
+        public virtual ICollection<IdentityUserClaim<Guid>> Claims { get; set; }
+        //public virtual ICollection<IdentityUserLogin<string>> Logins { get; set; }
+        //public virtual ICollection<IdentityUserToken<string>> Tokens { get; set; }
+        //public virtual ICollection<IdentityUserRole<string>> UserRoles { get; set; }
 
-        public Account(string name, string email) : base(email)
+        public Account() : base()
         {
-            Name = name;
+            Balance = 0;
+        }
+        public Account(string email) : base(email)
+        {
             Balance = 0;
         }
 

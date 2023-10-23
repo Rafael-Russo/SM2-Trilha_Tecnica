@@ -51,7 +51,7 @@ namespace ControleFinanceiro.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new Account(model.Name, model.Email) { Name = model.Name, UserName = model.Email };
+                var user = new Account() { Name = model.Name, UserName = model.Email, Email = model.Email };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -80,7 +80,7 @@ namespace ControleFinanceiro.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            if (!ModelState.IsValid)
+            try
             {
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
                 if (result.Succeeded)
@@ -93,8 +93,11 @@ namespace ControleFinanceiro.Controllers
                     return View(model);
                 }
             }
-            ModelState.AddModelError(string.Empty, "Erro de login. Usuário ou senha fora do padrão!");
-            return View(model);
+            catch(Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, "Erro de login. Usuário ou senha fora do padrão!");
+                return View(model);
+            }
         }
 
         // POST: Accounts/Logout
@@ -107,7 +110,7 @@ namespace ControleFinanceiro.Controllers
         }
 
         // GET: Accounts/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string? id)
         {
             if (id == null || _context.Account == null)
             {
@@ -125,7 +128,7 @@ namespace ControleFinanceiro.Controllers
         }
 
         // GET: Accounts/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string? id)
         {
             if (id == null || _context.Account == null)
             {
@@ -145,14 +148,15 @@ namespace ControleFinanceiro.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Email,Password,Balance")] Account account)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,Email,Password,Balance")] Account account)
         {
             if (!id.Equals(account.Id))
             {
+                Console.WriteLine("------------ Id não é igual!");
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            try
             {
                 try
                 {
@@ -163,20 +167,27 @@ namespace ControleFinanceiro.Controllers
                 {
                     if (!AccountExists(account.Id))
                     {
+                        Console.WriteLine("------------ Conta não existe!");
                         return NotFound();
                     }
                     else
                     {
+                        Console.WriteLine("------------ throw!");
                         throw;
                     }
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(account);
+            catch(Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, "Erro: " + ex);
+                Console.WriteLine("Erro: " + ex);
+                return View(account);
+            }
         }
 
         // GET: Accounts/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(string? id)
         {
             if (id == null || _context.Account == null)
             {
@@ -196,7 +207,7 @@ namespace ControleFinanceiro.Controllers
         // POST: Accounts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             if (_context.Account == null)
             {
@@ -212,9 +223,10 @@ namespace ControleFinanceiro.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AccountExists(string id)
+        private bool AccountExists(Guid id)
         {
-            return (_context.Account?.Any(e => e.Id.Equals(id))).GetValueOrDefault();
+            string strId = id.ToString();
+            return (_context.Account?.Any(e => e.Id.Equals(strId))).GetValueOrDefault();
         }
     }
 }

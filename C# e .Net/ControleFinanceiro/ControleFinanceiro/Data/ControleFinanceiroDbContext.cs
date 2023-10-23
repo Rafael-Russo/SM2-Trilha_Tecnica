@@ -1,26 +1,49 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ControleFinanceiro.Models;
 using ControleFinanceiro.Models.ViewModels;
 
 namespace ControleFinanceiro.Data
 {
-    public class ControleFinanceiroDbContext : IdentityDbContext<Account>
+    public class ControleFinanceiroDbContext : IdentityDbContext<Account, IdentityRole<Guid>, Guid >
     {
         public ControleFinanceiroDbContext(DbContextOptions<ControleFinanceiroDbContext> options) : base(options)
         {
         }
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(modelBuilder);
 
-            builder.Entity<Account>()
-            .Property(e => e.Email)
-            .HasColumnType("email");
+            modelBuilder.HasDefaultSchema("notdbo");
 
-            builder.Entity<Account>()
-                .Property(e => e.Password)
-                .HasColumnType("password");
+            modelBuilder.Entity<Account>(b =>
+            {
+                b.ToTable("Account");
+                b.Property(e => e.Email).HasColumnName("Email");
+                // Each User can have many UserClaims
+                b.HasMany(e => e.Claims)
+                    .WithOne()
+                    .HasForeignKey(uc => uc.UserId)
+                    .IsRequired();
+                //// Each User can have many UserLogins
+                //b.HasMany(e => e.Logins)
+                //    .WithOne()
+                //    .HasForeignKey(ul => ul.UserId)
+                //    .IsRequired();
+
+                //// Each User can have many UserTokens
+                //b.HasMany(e => e.Tokens)
+                //    .WithOne()
+                //    .HasForeignKey(ut => ut.UserId)
+                //    .IsRequired();
+
+                //// Each User can have many entries in the UserRole join table
+                //b.HasMany(e => e.UserRoles)
+                //    .WithOne()
+                //    .HasForeignKey(ur => ur.UserId)
+                //    .IsRequired();
+            });
         }
         public DbSet<Expense>? Expense { get; set; }
         public DbSet<Account>? Account { get; set; }

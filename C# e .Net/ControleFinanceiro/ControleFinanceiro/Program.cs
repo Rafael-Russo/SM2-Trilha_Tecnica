@@ -2,23 +2,27 @@ using ControleFinanceiro.Data;
 using ControleFinanceiro.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("ControleFinanceiroDbContext");
 builder.Services.AddDbContext<ControleFinanceiroDbContext>(options =>
-                    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+                    options.UseMySql(
+                        connectionString,
+                        ServerVersion.AutoDetect(connectionString),
+                        b => b.SchemaBehavior(MySqlSchemaBehavior.Translate,
+                        (schema, entity) => $"{schema ?? "dbo"}_{entity}"))
+                    );
 
-builder.Services.AddDefaultIdentity<Account>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ControleFinanceiroDbContext>();
-
-//builder.Services.AddIdentity<IdentityUser, IdentityRole>(config =>
-//{
-//    config.Password.RequiredLength = 6;
-//    config.Password.RequireDigit = false;
-//    config.Password.RequireNonAlphanumeric = false;
-//    config.Password.RequireUppercase = false;
-//}).AddEntityFrameworkStores<ControleFinanceiroDbContext>().AddDefaultTokenProviders();
+builder.Services.AddDefaultIdentity<Account>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false;
+    options.Password.RequiredLength = 6;
+    options.Password.RequireDigit = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+}).AddEntityFrameworkStores<ControleFinanceiroDbContext>().AddDefaultTokenProviders();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
