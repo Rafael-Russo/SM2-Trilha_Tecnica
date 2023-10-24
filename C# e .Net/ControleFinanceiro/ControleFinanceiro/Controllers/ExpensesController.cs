@@ -28,7 +28,7 @@ namespace ControleFinanceiro.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.Expense != null ? 
-                          View(await _context.Expense.Where(e => e.AccountId.Equals(_userManager.GetUserId(User))).ToListAsync()) :
+                          View(await _context.Expense.Where(e => e.AccountId == new Guid(_userManager.GetUserId(User))).ToListAsync()) :
                           Problem("Entity set 'ControleFinanceiroDbContext.Expense'  is null.");
         }
 

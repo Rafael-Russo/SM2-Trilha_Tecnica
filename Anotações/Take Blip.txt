@@ -5,3 +5,4 @@
 Utilização do BuiderAddictions (extensão do Chrome)
 
 regex101.com (site para verificar expressões do Regex(Regular expressions ou expressões regulares))
+File Uploader (extensão da Blip para fazer upload de arquivos)

@@ -12,4 +12,5 @@ atendimento humano em qualquer momento do processo
 verificar se o smartsales consegue verificar os preços de produtos baseados no cep do cliente / tabela de preços de acordo com localização do cliente
 
 obs:
-SmartSales tem integração com VTEX (intrigg para VTEX) para informar status dos pedidos para os clientes
+SmartSales tem integração com VTEX (intrigg para VTEX) para informar status dos pedidos para os clientes.
+o smart sales salva os preços do produto no bucket, não podemos salvar direto em um banco de dados. Assim conseguimos (teoricamente) fazer os preços dos produtos ficarem dinamicos.
