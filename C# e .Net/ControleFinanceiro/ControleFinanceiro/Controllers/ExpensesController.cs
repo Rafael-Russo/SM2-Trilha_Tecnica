@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using ControleFinanceiro.Data;
 using ControleFinanceiro.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ControleFinanceiro.Controllers
 {
+    [Authorize]
     public class ExpensesController : Controller
     {
         private readonly ControleFinanceiroDbContext _context;

@@ -60,11 +60,11 @@ namespace ControleFinanceiro.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Usuário ja existe!");
+                    ModelState.AddModelError(string.Empty, "Erro de Registro. Campos não seguem o padrão!");
                     return View(model);
                 }
             }
-            ModelState.AddModelError(string.Empty, "Erro de Registro. Campos não seguem o padrão!");
+            ModelState.AddModelError(string.Empty, "Erro. Favor contatar um administrador!");
             return View(model);
         }
 
@@ -95,7 +95,7 @@ namespace ControleFinanceiro.Controllers
             }
             catch(Exception ex)
             {
-                ModelState.AddModelError(string.Empty, "Erro de login. Usuário ou senha fora do padrão!");
+                ModelState.AddModelError(string.Empty, "Erro de login. Favor contatar um administrador!");
                 return View(model);
             }
         }

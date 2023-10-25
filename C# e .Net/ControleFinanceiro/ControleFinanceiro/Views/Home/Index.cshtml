@@ -1,8 +1,87 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<ControleFinanceiro.Models.Expense>
+
+@{
+    ViewData["Title"] = "Home";
+    double monthExpenses = 0;
+    @if (User.Identity.IsAuthenticated)
+    {
+        foreach (var item in Model)
+        {
+            monthExpenses += item.Value;
+        }
+    }
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <main>
+            <section>
+                <h2>Visão Geral</h2>
+                <p>Despesas do Mês: R$ <span id="monthly-expenses">@monthExpenses</span></p>
+            </section>
+
+            <section>
+                <h2>Despesas Recentes</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Description)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DueDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Value)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Type)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Status)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DueDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Value)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Type)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Status)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    }
+    else
+    {
+        <div>
+            <h3>Por favor, faça login ou registre-se para usar o sistema</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
+                <a class="btn btn-outline-primary" asp-area="" asp-controller="Accounts" asp-action="Login">Fazer Login</a>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-outline-primary" asp-area="" asp-controller="Accounts" asp-action="Register">Fazer Registro</a>
+            </div>
+        </div>
+    }
 </div>
